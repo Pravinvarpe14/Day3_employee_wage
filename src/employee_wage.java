@@ -6,6 +6,7 @@ public class employee_wage {
 	public static final int wagePerHour = 20;
 	public static final int empFullTime = 1;
 	public static final int empPartTime = 2;
+	public static final int workingDays = 20;
 	
 
 	public static void main(String[] args) {
@@ -16,18 +17,27 @@ public class employee_wage {
 		/*
 		 * taking variable
 		 */
+
 		int employeeWage = 0;
 		int workingHours = 0;
+		int totalEmpWage = 0;
+
+	
 		/*
 		 * using math.floor 
 		 */
 		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-		
 		/*
-		 * verifying by switch case
+		 * using for loop
 		 */
 		
-		switch (empCheck) {
+		for (int day = 0; day <= workingDays; day++) {
+		
+			
+			/*
+			 * verifying by switch case
+			 */
+			switch (empCheck) {
 
 		case empFullTime:
 			
@@ -44,19 +54,19 @@ public class employee_wage {
 		default:
 			System.out.println("Employee is absent...");
 			workingHours = 0;
+			
+			
 		}
 		
 		employeeWage = wagePerHour * workingHours;
+		totalEmpWage += employeeWage;
 		System.out.println("employee wage = " + employeeWage);
+			
+	}
 		
-		
-		
-		
-		
-		
-		
-		
+		System.out.println("Total employee monthly wage = " + totalEmpWage);
+	}
 
 	}
 
-}
+
