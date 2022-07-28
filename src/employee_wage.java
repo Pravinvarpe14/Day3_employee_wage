@@ -14,6 +14,9 @@ public class employee_wage {
 		 * taking variable
 		 */
 		int isPresent = 1;
+		int wagePerHour = 20;
+		int workingHours = 8;
+		int employeeWage = wagePerHour * workingHours;
 		/*
 		 * using math.floor 
 		 */
@@ -27,6 +30,7 @@ public class employee_wage {
 		
 			
 			System.out.println("Employee is present...");
+			System.out.println("Employee wage = " + employeeWage);
 		} else {
 			
 			System.out.println("Employee is absent...");
