@@ -3,6 +3,9 @@
  */
 public class employee_wage {
 	
+	public static final int wagePerHour = 20;
+	public static final int empFullTime = 1;
+	public static final int empPartTime = 2;
 	
 
 	public static void main(String[] args) {
@@ -13,39 +16,36 @@ public class employee_wage {
 		/*
 		 * taking variable
 		 */
-		int empFullTime = 1;
-		int empPartTime = 2;
-		int wagePerHour = 20;
+		int employeeWage = 0;
 		int workingHours = 0;
-		int employeeWage = wagePerHour * workingHours;
 		/*
 		 * using math.floor 
 		 */
 		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 		
 		/*
-		 * verifying by if else statement
+		 * verifying by switch case
 		 */
 		
-		if (empCheck == empFullTime) {
+		switch (empCheck) {
+
+		case empFullTime:
 			
 			System.out.println("Employee is present for full time...");
 			workingHours = 8;
+			break;
 			
-		} else if (empCheck == empPartTime) {
+		case empPartTime:
 			
 			System.out.println("Employee is present for part time...");
 			workingHours = 4;
+			break;
 			
-		} else {
-			
+		default:
 			System.out.println("Employee is absent...");
 			workingHours = 0;
 		}
 		
-		/*
-		 * printing employee wage
-		 */
 		employeeWage = wagePerHour * workingHours;
 		System.out.println("employee wage = " + employeeWage);
 		
