@@ -13,29 +13,41 @@ public class employee_wage {
 		/*
 		 * taking variable
 		 */
-		int isPresent = 1;
+		int empFullTime = 1;
+		int empPartTime = 2;
 		int wagePerHour = 20;
-		int workingHours = 8;
+		int workingHours = 0;
 		int employeeWage = wagePerHour * workingHours;
 		/*
 		 * using math.floor 
 		 */
-		int empCheck = (int) Math.floor(Math.random() * 10) % 2;
+		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 		
 		/*
 		 * verifying by if else statement
 		 */
 		
-		if (empCheck == isPresent) {
-		
+		if (empCheck == empFullTime) {
 			
-			System.out.println("Employee is present...");
-			System.out.println("Employee wage = " + employeeWage);
+			System.out.println("Employee is present for full time...");
+			workingHours = 8;
+			
+		} else if (empCheck == empPartTime) {
+			
+			System.out.println("Employee is present for part time...");
+			workingHours = 4;
+			
 		} else {
 			
 			System.out.println("Employee is absent...");
+			workingHours = 0;
 		}
 		
+		/*
+		 * printing employee wage
+		 */
+		employeeWage = wagePerHour * workingHours;
+		System.out.println("employee wage = " + employeeWage);
 		
 		
 		
